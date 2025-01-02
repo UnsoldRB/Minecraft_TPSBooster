@@ -14,10 +14,12 @@ import static com.unsoldriceball.gundamagedecreaser.TBMain.ID_MOD;
 @Config(modid = ID_MOD)
 public class TBConfig
 {
+    public static boolean debugMode = false;
     @Config.RangeInt(min = 0)
     public static int maxDistanceFromPlayer = 48;
-    @Config.RangeInt(min = 50)
-    public static int allowableLimit_TickDuration = 60;
+    @Config.RangeInt(min = 50000000)
+    @Config.Comment("nanoTime.")
+    public static long allowableLimit_TickDuration = 60000000;
 
 
 

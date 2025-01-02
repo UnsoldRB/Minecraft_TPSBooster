@@ -2,6 +2,7 @@ package com.unsoldriceball.gundamagedecreaser;
 
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -55,6 +56,11 @@ public class TBMain
         final long _NOW = System.nanoTime();
         lastTickDuration = _NOW - lastTickedTime;
         lastTickedTime = _NOW;
+        
+        if (TBConfig.debugMode && player != null)
+        {
+            player.sendMessage(new TextComponentString(lastTickDuration + "ns"));
+        }
     }
 
 
