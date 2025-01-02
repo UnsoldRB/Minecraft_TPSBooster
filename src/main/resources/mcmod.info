@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tpsbooster",
+  "name": "TPSBooster",
+  "description": "Increase TPS.",
+  "version": "1.0.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["RiceBallSouls"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
