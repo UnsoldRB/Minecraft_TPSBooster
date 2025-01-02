@@ -22,6 +22,7 @@ public class TBMain
     private static EntityPlayer player;
     private static long lastTickedTime = System.nanoTime();
     private static long lastTickDuration = 0;
+    private static long allowableLimit_TickDuration_milliSec = 0;
 
 
 
@@ -32,6 +33,15 @@ public class TBMain
     {
         //これでこのクラス内でForgeのイベントが動作するようになるらしい。
         MinecraftForge.EVENT_BUS.register(this);
+        milliToNano();
+    }
+
+
+
+    //Configのミリ秒をナノ秒に変換する。
+    public static void milliToNano()
+    {
+        allowableLimit_TickDuration_milliSec = TBConfig.allowableLimit_TickDuration * 1000000L;
     }
 
 
@@ -73,7 +83,7 @@ public class TBMain
         if (event.getEntity().world.isRemote) return;
         if (player == null) return;
         if (event.getEntity().getUniqueID().equals(player.getUniqueID())) return;
-        if (lastTickDuration < TBConfig.allowableLimit_TickDuration) return;
+        if (lastTickDuration < allowableLimit_TickDuration_milliSec) return;
 
         if (event.getEntity().dimension != player.dimension)
         {

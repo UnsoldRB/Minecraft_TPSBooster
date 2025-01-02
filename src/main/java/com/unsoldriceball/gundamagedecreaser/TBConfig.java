@@ -17,9 +17,9 @@ public class TBConfig
     public static boolean debugMode = false;
     @Config.RangeInt(min = 0)
     public static int maxDistanceFromPlayer = 48;
-    @Config.RangeInt(min = 50000000)
-    @Config.Comment("nanoTime.")
-    public static long allowableLimit_TickDuration = 60000000;
+    @Config.RangeInt(min = 50)
+    @Config.Comment("milliSeconds.")
+    public static int allowableLimit_TickDuration = 60;
 
 
 
@@ -33,6 +33,7 @@ public class TBConfig
             if (event.getModID().equals(ID_MOD))
             {
                 ConfigManager.sync(ID_MOD, Config.Type.INSTANCE);
+                TBMain.milliToNano();
             }
         }
     }
