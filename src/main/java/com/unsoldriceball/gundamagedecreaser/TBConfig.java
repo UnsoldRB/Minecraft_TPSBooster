@@ -17,8 +17,8 @@ public class TBConfig
     public static boolean debugMode = false;
     @Config.RangeInt(min = 0)
     public static int maxDistanceFromPlayer = 48;
-    @Config.RangeInt(min = 50)
-    @Config.Comment("milliSeconds.")
+    @Config.RangeInt(min = 0)
+    @Config.Comment("milliSeconds")
     public static int allowableLimit_TickDuration = 60;
 
 
