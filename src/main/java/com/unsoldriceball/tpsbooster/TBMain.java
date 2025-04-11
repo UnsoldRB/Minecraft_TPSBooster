@@ -1,4 +1,4 @@
-package com.unsoldriceball.gundamagedecreaser;
+package com.unsoldriceball.tpsbooster;
 
 
 import net.minecraft.entity.player.EntityPlayer;
